@@ -69,6 +69,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
         initSkypeView();
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if(skypeAudio != null) {
+            skypeAudio.refreshData();
+        }
+    }
+
     private void initView() {
         displayName = (EditText) findViewById(R.id.displayName);
         message = (EditText) findViewById(R.id.messageInput);
