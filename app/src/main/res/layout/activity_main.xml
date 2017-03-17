@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/displayName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="15dp"
+        android:hint="diplayName"
+        android:text="guoGavin"/>
+
+    <EditText
+        android:id="@+id/meetingUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:hint="meetingUrl"
+        android:layout_below="@+id/displayName"
+        android:text="https://meet.lync.com/shlinker-o365ms/tonyxia/2DD213WR" />
+
+    <Button
+        android:id="@+id/video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="StartVideo"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/meetingUrl"
+        android:textSize="15dp" />
+
+    <LinearLayout
+        android:id="@+id/message_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/video"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="5dp"
+            android:textSize="15dp"
+            android:hint="message"
+            android:text="hello" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:layout_below="@+id/message_ll"
+        android:layout_marginTop="5dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/showMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
+
+    <com.gavinguo.skypevideo.DragView
+        android:id="@+id/skypeAudioMeun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <com.gavinguo.skypevideo.AudioView
+        android:id="@+id/skypeAudio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center_vertical" >
+
+    <RelativeLayout
+        android:id="@+id/open"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/skype_bar_black_bac" >
+
+        <ImageView
+            android:id="@+id/open_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/skype_bar_open"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pause"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/skype_bar_black_bac" >
+
+        <ImageView
+            android:id="@+id/pause_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/skype_bar_pause"
+            android:layout_centerInParent="true" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#434343"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mute"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/skype_bar_black_bac" >
+
+        <ImageView
+            android:id="@+id/mute_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/skype_bar_nonmute"
+            android:layout_centerInParent="true" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#434343"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/speaker"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/skype_bar_black_bac" >
+
+        <ImageView
+            android:id="@+id/speaker_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/skype_bar_nonspeaker"
+            android:layout_centerInParent="true" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#434343"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/close"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/skype_bar_red_bac">
+
+        <ImageView
+            android:id="@+id/close_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/skype_bar_away"
+            android:layout_centerInParent="true" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#434343"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

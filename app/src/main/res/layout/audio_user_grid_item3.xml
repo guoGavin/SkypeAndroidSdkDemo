@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_centerHorizontal="true"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="130dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/participantVideoLayoutId"
+        android:layout_alignParentTop="true" >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:scaleType="fitXY"
+            android:id="@+id/avatar_big" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/avatar_state"
+        android:layout_width="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="20dp"
+        android:layout_below="@+id/participantVideoLayoutId" >
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/mute_state_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/skype_mute"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/hold_state_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/skype_pause"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="UserName"
+            android:textSize="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@+id/avatar"
+            android:maxLines="1"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/mute_state_icon" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

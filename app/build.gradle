@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.gavinguo.skypevideo"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resValue "string", "ENTERPRISE_AUTHENTICATOR_ACCOUNT_TYPE", "\"${applicationId}\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/MSFTSIG.RSA'
+        exclude 'META-INF/BCKEY.DSA'
+        exclude 'META-INF/BCKEY.SF'
+        exclude 'META-INF/MSFTSIG.SF'
+    }
+
+    dexOptions {
+        preDexLibraries=false
+        jumboMode = true
+        javaMaxHeapSize "4g"
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.android.support:multidex:1.0.1"
+    compile(name: "SkypeForBusinessNative", ext: 'aar')
+    compile(name: "SkypeForBusinessPlatform", ext: 'aar')
+    compile(name: "SkypeForBusinessInjector", ext: 'aar')
+    compile(name: "SkypeForBusiness", ext: 'aar')
+    compile(name: "SkypeForBusinessNativeEnums", ext: 'aar')
+    compile(name: "SkypeForBusinessTelemetryClient", ext: 'aar')
+    compile(name: "SkypeForBusinessTelemetryService", ext: 'aar')
+    compile(name: "android-database-sqlcipher", ext: 'aar')
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v4:25.1.0'
+}
+
+afterEvaluate {
+    tasks.matching {
+        it.name.startsWith("dex")
+    }.each { dx ->
+        if (dx.additionalParameters == null) {
+            dx.additionalParameters = []
+        }
+        // optional
+        dx.additionalParameters += '--multi-dex' // enable multidex
+        dx.additionalParameters += "--main-dex-list=$projectDir/maindexlist.txt".toString()
+        dx.additionalParameters += "--minimal-main-dex"
+    }
+}
